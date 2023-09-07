@@ -34,10 +34,12 @@ export default function Home() {
                 const href = `https://twitter.com/intent/tweet?text=${item.content}%20%20%23${item.author}`;
                 return (
                   <div id='quote-box' className=' container'>
-                  <div id='text'><FaQuoteLeft className='inline-flex pr-1'/>{item.content} <FaQuoteRight className='inline-flex pl-1'/></div>
-                  <div id='author' className='mt-3 mb-2  ' > -{item.author}</div>
+
+                  <div id='text' key={item._id}><FaQuoteLeft className='inline-flex pr-1'/>{item.content} <FaQuoteRight className='inline-flex pl-1'/>d</div>
+                  <div id='author' key={item.authorSlug} className='mt-3 mb-2  ' > -{item.author}</div>
                   <div className='flex mt-4 mb-4 '>
                       <a id='tweet-quote'
+                        key={item.length}
                          href={href}
                          target='_blank'
                          className='
