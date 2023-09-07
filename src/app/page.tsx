@@ -17,7 +17,9 @@ export default function Home() {
     getQuote();
   }, []);
 
-  const  getNewQuote = async () => {
+
+
+    const  getNewQuote = async () => {
     const request = await fetch('https://api.quotable.io/quotes/random');
     const response = await request.json();
     console.log('Response from api: ' ,response);
@@ -30,16 +32,16 @@ export default function Home() {
           <div id='wrapper' className='flex items-center container mt-96 mx-auto w-96 '>
 
             {
-              quote && quote.length && quote.map((item:any) => {
+              quote && quote.length && quote.map((item:any, index: number) => {
                 const href = `https://twitter.com/intent/tweet?text=${item.content}%20%20%23${item.author}`;
                 return (
-                  <div id='quote-box' className=' container'>
+                  <div id='quote-box' className=' container' key={item._id}>
 
-                  <div id='text' key={item._id}><FaQuoteLeft className='inline-flex pr-1'/>{item.content} <FaQuoteRight className='inline-flex pl-1'/></div>
+                  <div id='text' key={index}><FaQuoteLeft className='inline-flex pr-1'/>{item.content} <FaQuoteRight className='inline-flex pl-1'/></div>
                   <div id='author' key={item.authorSlug} className='mt-3 mb-2  ' > -{item.author}</div>
                   <div className='flex mt-4 mb-4 '>
                       <a id='tweet-quote'
-                        key={item.length}
+                        key={index+"a1"}
                          href={href}
                          target='_blank'
                          className='
