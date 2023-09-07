@@ -19,7 +19,12 @@ export default function Home() {
     getQuote();
   }, []);
 
-
+  const  getNewQuote = async () => {
+    const request = await fetch('https://api.quotable.io/quotes/random');
+    const response = await request.json();
+    console.log('Response from api: ' ,response);
+    setQuote(response);
+  }
 
 
 
@@ -44,7 +49,7 @@ export default function Home() {
                          target='_blank'
                          className='pl-2'>Tweet Quote</a>
                   </div>
-                  <div><button id='new-quote'>Generate Quote</button></div>
+                  <div><button id='new-quote' onClick={getNewQuote} >Generate Quote</button></div>
                   </div>
                 )
               })
