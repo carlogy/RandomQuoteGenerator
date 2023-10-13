@@ -41,30 +41,29 @@ export default function Home() {
                        key={index}
 
                   ><FaQuoteLeft className='inline-flex pr-1'/>{item.content} <FaQuoteRight className='inline-flex pl-1'/></div>
-                  <div id='author' key={item.authorSlug} className='mt-3 mb-2 ' > -{item.author}</div>
-                  <div className='flex space-x-1 container mt-4 mb-4  '>
-
+                  <div id='author' key={item.authorSlug} className='mt-3 mb-2' > - {item.author}</div>
+                  <div className=' space-x-1 container mt-4 mb-4 flex'>
+                      <div className='flex-grow'></div>
                       <a id='tweet-quote'
                         key={index+"a1"}
                          href={href}
                          target='_blank'
                          className='
-
-                                    pl-2
-                                    pt-1
-                                    inline-flex
+                                    flex-none
                                     bg-cyan-500
                                     hover:bg-cyan-700
                                     rounded-full
-                                    w-8'><FaTwitter /> </a>
+                                    w-8
+                                    '><FaTwitter className= 'flex-co mt-1 ml-2' /> </a>
                         <div><button id='new-quote'
                              onClick={getNewQuote}
                              className='px-auto
-
-                                        inline-flex
+                                        flex-2
+                                        w-48
                                         rounded-full
                                         bg-cyan-500
                                         hover:bg-cyan-700'>Generate Quote</button></div>
+                        <div className='flex-grow'></div>
                   </div>
                   </div>
 
