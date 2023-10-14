@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
 
-          <div id='wrapper' className='flex items-center container mx-auto mt-80 lg:mt-96  '>
+          <div id='wrapper' className='flex items-center container mx-auto mt-[50%]  md:mt-96'>
 
             {
               quote && quote.length && quote.map((item:any, index: number) => {
