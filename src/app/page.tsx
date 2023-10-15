@@ -29,13 +29,15 @@ export default function Home() {
 
   return (
 
-          <div id='wrapper' className='flex items-center container mx-auto mt-[50%]  md:mt-96'>
+          <div id='wrapper' className='flex items-center container mx-auto sm:mt-[50%] mt-[70%]  md:mt-96'>
 
             {
               quote && quote.length && quote.map((item:any, index: number) => {
                 const href = `https://twitter.com/intent/tweet?text=${item.content}%20%20%23${item.author}`;
                 return (
-                  <div id='quote-box' className='container m-8 text-center' key={item._id}>
+                  <div id='quote-box'
+                       className='container m-8 text-center'
+                       key={item._id}>
 
                   <div id='text'
                        key={index}
@@ -53,13 +55,15 @@ export default function Home() {
                                     bg-cyan-500
                                     hover:bg-cyan-700
                                     rounded-full
-                                    w-8
-                                    '><FaTwitter className= 'flex-co mt-1 ml-2' /> </a>
+                                    w-10
+                                    px
+                                    '><FaTwitter className= 'flex-col mt-1 mx-auto' /> </a>
                         <div><button id='new-quote'
                              onClick={getNewQuote}
-                             className='px-auto
+                             className='mx-auto
+
                                         flex-2
-                                        w-48
+                                        w-36
                                         rounded-full
                                         bg-cyan-500
                                         hover:bg-cyan-700'>Generate Quote</button></div>
